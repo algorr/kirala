@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kirala/presentation/resources/route_manager.dart';
 import 'package:kirala/presentation/resources/theme_manager.dart';
+import 'package:sizer/sizer.dart';
 
 class MyApp extends StatefulWidget {
   //const MyApp({super.key}); // default constructor
@@ -19,11 +20,15 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: getAppTheme(),
-      onGenerateRoute: RouteManager.getRoute,
-      initialRoute: Routes.splashRoute,
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: getAppTheme(),
+          onGenerateRoute: RouteManager.getRoute,
+          initialRoute: Routes.splashRoute,
+        );
+      },
     );
   }
 }

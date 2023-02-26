@@ -6,6 +6,8 @@ class ColorManager {
   static Color grey = HexColor.fromHex("#C6C6C6");
   static Color dividerColor = HexColor.fromHex("#EDE8E9");
   static Color grey1 = HexColor.fromHex("#484848");
+  static Color emptyUser = HexColor.fromHex("#00001A");
+  static Color userProfile = HexColor.fromHex("#999999");
   static Color lightGrey = HexColor.fromHex("#908E8E");
   static Color black = HexColor.fromHex("#3A3335");
   static Color white = HexColor.fromHex("#FFFFFF");
