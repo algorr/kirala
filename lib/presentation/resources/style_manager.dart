@@ -10,28 +10,28 @@ TextStyle _getTextStyle(
       color: color);
 }
 
-// regular style
+//* regular style
 TextStyle getRegularTextStyle(
     {double fontSize = FontSize.s12, required Color color}) {
   return _getTextStyle(
       fontSize, FontConsts.fontFamily, FontWeightManager.regular, color);
 }
 
-// light style
+//* light style
 TextStyle getLightTextStyle(
     {double fontSize = FontSize.s12, required Color color}) {
   return _getTextStyle(
       fontSize, FontConsts.fontFamily, FontWeightManager.light, color);
 }
 
-// medium style
+//* medium style
 TextStyle getMediumTextStyle(
     {double fontSize = FontSize.s12, required Color color}) {
   return _getTextStyle(
       fontSize, FontConsts.fontFamily, FontWeightManager.medium, color);
 }
 
-// bold style
+//* bold style
 TextStyle getBoldTextStyle(
     {double fontSize = FontSize.s12, required Color color}) {
   return _getTextStyle(

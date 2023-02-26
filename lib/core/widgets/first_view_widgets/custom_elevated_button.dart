@@ -5,9 +5,11 @@ class CustomElevatedButton extends StatelessWidget {
     super.key,
     required this.onPressed,
     required this.data,
+    this.style,
   });
   final VoidCallback onPressed;
   final String data;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class CustomElevatedButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           data,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: style,
         ));
   }
 }

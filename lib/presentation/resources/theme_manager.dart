@@ -6,12 +6,12 @@ import 'package:kirala/presentation/resources/value_manager.dart';
 
 ThemeData getAppTheme() {
   return ThemeData(
-// Main colors of the application
+//* Main colors of the application
     primaryColor: ColorManager.primary,
     disabledColor: ColorManager.grey1,
     //splashColor: ColorManager.primaryWith70Opacity,
 
-// Bottom Sheet Theme
+//* Bottom Sheet Theme
     bottomSheetTheme: BottomSheetThemeData(
       backgroundColor: ColorManager.white,
       shape: RoundedRectangleBorder(
@@ -19,14 +19,14 @@ ThemeData getAppTheme() {
       ),
     ),
 
-    // CardView Theme
+//* CardView Theme
     cardTheme: CardTheme(
       color: ColorManager.white,
       shadowColor: ColorManager.grey,
       elevation: AppSize.s4,
     ),
 
-    // AppBar Theme
+//* AppBar Theme
     appBarTheme: AppBarTheme(
       centerTitle: true,
       color: ColorManager.primary,
@@ -38,7 +38,7 @@ ThemeData getAppTheme() {
       ),
     ),
 
-    // Button Theme
+//* Button Theme
     buttonTheme: ButtonThemeData(
       shape: const StadiumBorder(),
       disabledColor: ColorManager.grey1,
@@ -46,24 +46,30 @@ ThemeData getAppTheme() {
       //splashColor: ColorManager.primaryWith70Opacity,
     ),
 
-    // Elevated Button Theme
+//* Elevated Button Theme
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
+        elevation: 0,
         backgroundColor: ColorManager.white,
+        foregroundColor: ColorManager.primaryWithOpacity,
         shape: RoundedRectangleBorder(
-          side: BorderSide(color: ColorManager.primary),
+          side: BorderSide(color: ColorManager.inputBorderColor),
           borderRadius: BorderRadius.circular(
-            AppSize.s12,
+            AppSize.s8,
           ),
         ),
       ),
     ),
 
-    // TextTheme
+//* TextTheme
     textTheme: TextTheme(
       displayLarge: getBoldTextStyle(
         color: ColorManager.black,
-        fontSize: FontSize.s18,
+        fontSize: FontSize.s14,
+      ),
+      titleSmall: getRegularTextStyle(
+        fontSize: FontSize.s14,
+        color: ColorManager.black,
       ),
       titleMedium: getMediumTextStyle(
         color: ColorManager.primary,
@@ -77,7 +83,7 @@ ThemeData getAppTheme() {
           color: ColorManager.black, fontSize: FontSize.s16),
     ),
 
-    //Input Decoration Theme
+//* Input Decoration Theme
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: const EdgeInsets.all(
         AppPadding.p8,

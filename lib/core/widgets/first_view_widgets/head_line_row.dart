@@ -14,7 +14,9 @@ class HeadLineRow extends StatelessWidget {
     return Row(
       children: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const ImageIcon(
             AssetImage(ImageManager.backArrow),
           ),

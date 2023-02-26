@@ -29,9 +29,9 @@ class MainView extends StatelessWidget {
               builder: (context) => SingleChildScrollView(
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height * .95,
-                  child: Column(
+                  child: ListView(
                     children: [
-                      // Headline
+                      //* Headline
                       Padding(
                         padding: EdgeInsets.only(
                             left: AppPadding.p16.sp,
@@ -40,14 +40,14 @@ class MainView extends StatelessWidget {
                         child: const HeadLineRow(),
                       ),
 
-                      // Divider
+                      //* Divider
                       Padding(
                         padding:
                             EdgeInsets.symmetric(horizontal: AppPadding.p16.sp),
                         child: const DividerWidget(),
                       ),
 
-                      // Profile Picture
+                      //* Profile Picture
                       Row(
                         children: [
                           Stack(
@@ -83,7 +83,7 @@ class MainView extends StatelessWidget {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          // Profile Picture Title
+                          //* Profile Picture Title
                           Align(
                             alignment: Alignment.topLeft,
                             child: Padding(
@@ -96,7 +96,8 @@ class MainView extends StatelessWidget {
                               ),
                             ),
                           ),
-                          // Advert Title
+
+                          //* Advert Title
                           Padding(
                             padding: EdgeInsets.symmetric(
                                 vertical: AppPadding.p10,
@@ -107,7 +108,7 @@ class MainView extends StatelessWidget {
                             ),
                           ),
 
-                          // Add Button
+                          //* Add Button
                           Align(
                             alignment: Alignment.topLeft,
                             child: Padding(
@@ -119,7 +120,191 @@ class MainView extends StatelessWidget {
                                 data: AppStrings.addPhotoTitle,
                               ),
                             ),
-                          )
+                          ),
+
+                          //* Gender Selection Column
+                          Column(
+                            children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: AppPadding.p10,
+                                      horizontal: AppPadding.p20),
+                                  child: CustomTextWidget(
+                                    data: AppStrings.genderSelectionTitle,
+                                    style:
+                                        Theme.of(context).textTheme.bodyLarge,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * .9,
+                                child: CustomElevatedButton(
+                                  onPressed: () {},
+                                  data: AppStrings.femaleTitle,
+                                  style: Theme.of(context).textTheme.titleSmall,
+                                ),
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * .9,
+                                child: CustomElevatedButton(
+                                  onPressed: () {},
+                                  data: AppStrings.maleTitle,
+                                  style: Theme.of(context).textTheme.titleSmall,
+                                ),
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * .9,
+                                child: CustomElevatedButton(
+                                  onPressed: () {},
+                                  data: AppStrings.otherGenderTitle,
+                                  style: Theme.of(context).textTheme.titleSmall,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 2.h),
+                          //* Pet Selection Column
+                          Column(
+                            children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: AppPadding.p10,
+                                      horizontal: AppPadding.p20),
+                                  child: CustomTextWidget(
+                                    data: AppStrings.petSelectionTitle,
+                                    style:
+                                        Theme.of(context).textTheme.bodyLarge,
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: AppMargin.m20),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        flex: 5,
+                                        child: SizedBox(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              .4,
+                                          child: CustomElevatedButton(
+                                            onPressed: () {},
+                                            data: AppStrings.femaleTitle,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .titleSmall,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 5.w,
+                                      ),
+                                      Expanded(
+                                        flex: 5,
+                                        child: SizedBox(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              .4,
+                                          child: CustomElevatedButton(
+                                            onPressed: () {},
+                                            data: AppStrings.maleTitle,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .titleSmall,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 2.h),
+
+                          //* Pet Count Selection Column
+                          Column(
+                            children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: AppPadding.p10,
+                                      horizontal: AppPadding.p20),
+                                  child: CustomTextWidget(
+                                    data: AppStrings.petCountTitle,
+                                    style:
+                                        Theme.of(context).textTheme.bodyLarge,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * .9,
+                                child: CustomElevatedButton(
+                                  onPressed: () {},
+                                  data: AppStrings.petCount1,
+                                  style: Theme.of(context).textTheme.titleSmall,
+                                ),
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * .9,
+                                child: CustomElevatedButton(
+                                  onPressed: () {},
+                                  data: AppStrings.petCount2,
+                                  style: Theme.of(context).textTheme.titleSmall,
+                                ),
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * .9,
+                                child: CustomElevatedButton(
+                                  onPressed: () {},
+                                  data: AppStrings.petCount3,
+                                  style: Theme.of(context).textTheme.titleSmall,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 2.h),
+                          //* Education Status Column
+                          Column(
+                            children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: AppPadding.p10,
+                                      horizontal: AppPadding.p20),
+                                  child: CustomTextWidget(
+                                    data: AppStrings.educationSelectionTitle,
+                                    style:
+                                        Theme.of(context).textTheme.bodyLarge,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                  width: MediaQuery.of(context).size.width * .9,
+                                  child: DropdownButtonFormField(
+                                      hint: CustomTextWidget(
+                                        data: AppStrings.dropDownSelectionTitle,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall,
+                                      ),
+                                      decoration: InputDecoration(
+                                          border: OutlineInputBorder()),
+                                      items: [],
+                                      onChanged: (index) {}))
+                            ],
+                          ),
                         ],
                       )
                     ],
