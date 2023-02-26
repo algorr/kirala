@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kirala/core/widgets/first_view_widgets/custom_text_widget.dart';
 
 class ExpressYourselfView extends StatelessWidget {
   const ExpressYourselfView({super.key});
@@ -9,7 +10,9 @@ class ExpressYourselfView extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {},
-          child: const Text('Express Yourself'),
+          child: CustomTextWidget(
+              data: 'Express Yourself',
+              style: Theme.of(context).textTheme.titleMedium),
         ),
       ),
     );

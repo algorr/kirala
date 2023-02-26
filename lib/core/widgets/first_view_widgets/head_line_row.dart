@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kirala/presentation/resources/image_manager.dart';
 import 'package:kirala/presentation/resources/string_manager.dart';
+import 'package:kirala/presentation/resources/value_manager.dart';
 import 'package:sizer/sizer.dart';
 
 class HeadLineRow extends StatelessWidget {
@@ -11,7 +12,6 @@ class HeadLineRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         IconButton(
           onPressed: () {},
@@ -20,11 +20,11 @@ class HeadLineRow extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: 15.w,
+          width: AppPadding.p25.sp,
         ),
         Text(
           AppStrings.bottomSheetHeadTitle,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: Theme.of(context).textTheme.displayLarge,
         ),
       ],
     );
