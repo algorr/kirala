@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kirala/presentation/resources/color_manager.dart';
 import 'package:kirala/presentation/resources/image_manager.dart';
 import 'package:kirala/presentation/resources/string_manager.dart';
+import 'package:kirala/presentation/resources/value_manager.dart';
 import 'package:kirala/widgets/first_view_widgets/divider_widget.dart';
 import 'package:kirala/widgets/first_view_widgets/head_line_row.dart';
 import 'package:sizer/sizer.dart';
@@ -29,13 +30,16 @@ class MainView extends StatelessWidget {
                         // Headline
                         Padding(
                           padding: EdgeInsets.only(
-                              left: 16.sp, right: 16.sp, top: 10.sp),
+                              left: AppPadding.p16.sp,
+                              right: AppPadding.p16.sp,
+                              top: AppPadding.p10.sp),
                           child: const HeadLineRow(),
                         ),
 
                         // Divider
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8.w),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: AppPadding.p8.w),
                           child: const DividerWidget(),
                         ),
 
@@ -46,11 +50,13 @@ class MainView extends StatelessWidget {
                               children: [
                                 Padding(
                                   padding: EdgeInsets.symmetric(
-                                      horizontal: 16.sp, vertical: 5.sp),
+                                      horizontal: AppPadding.p16.sp,
+                                      vertical: AppPadding.p5.sp),
                                   child: Container(
-                                    padding: EdgeInsets.only(left: 16.sp),
-                                    height: 15.h,
-                                    width: 30.w,
+                                    padding: EdgeInsets.only(
+                                        left: AppPadding.p16.sp),
+                                    height: AppSize.s15.h,
+                                    width: AppSize.s30.w,
                                     decoration: BoxDecoration(
                                         color: ColorManager.grey,
                                         borderRadius:
@@ -58,11 +64,12 @@ class MainView extends StatelessWidget {
                                   ),
                                 ),
                                 Padding(
-                                  padding:
-                                      EdgeInsets.only(left: 32.sp, top: 4.h),
+                                  padding: EdgeInsets.only(
+                                      left: AppPadding.p32.sp,
+                                      top: AppPadding.p4.h),
                                   child: CircleAvatar(
                                     backgroundColor: Colors.grey.shade500,
-                                    radius: 40,
+                                    radius: AppPadding.p40,
                                     child: Image.asset(ImageManager.emptyUser),
                                   ),
                                 ),
