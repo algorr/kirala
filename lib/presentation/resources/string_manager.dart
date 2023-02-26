@@ -5,12 +5,26 @@ class AppStrings {
   static const String bottomSheetHeadTitle = 'Kendini İfade Et!';
   static const String profilePhotoTitle = 'Profil Fotoğrafı';
   static const String addPhotoTitle = 'Ekle';
+  static const String saveButtonTitle = 'Kaydet';
   static const String expressYourselfButtonTitle = 'Kendini İfade Et';
   static const String genderSelectionTitle = 'Cinsiyetiniz';
   static const String petCountTitle = 'Pet Dost Sayısı';
   static const String petSelectionTitle = 'Pet Dostunuz Var mı?';
   static const String educationSelectionTitle = 'Eğitim Durumunuz:';
-  static const String dropDownSelectionTitle = 'Eğitim Durumunuz:';
+  static const String dropDownSelectionTitle = 'Lütfen Seçiniz';
+  static const String netSalaryTitle = 'Aylık Net Maaş';
+  static const String incomeStatusTitle = 'Ek Geliriniz Var mı?';
+  static const String addIncomeTitle = 'Gelir Ekle';
+  static const String incomeTypeTitle = 'Gelir Tipi:';
+  static const String incomeYesTitle = 'Evet';
+  static const String incomeNoTitle = 'Hayır';
+  static const String lowestPrice = 'En Düşük';
+  static const String highestPrice = 'En Yüksek';
+  static const String tellAboutYourselfTitle =
+      'Yeni ev sahibinize biraz kendinizden bahsedin. Örn; Taşınma nedenim şudur...';
+  static const String currentRentalAmountTitle = 'Mevcut Kira Miktarınız';
+  static const String priceRangeTitle =
+      'Kiralamak İstediğiniz Mülkün Fiyat Aralığı';
   static const String maleTitle = 'Erkek';
   static const String femaleTitle = 'Kadın';
   static const String petCount1 = '1';

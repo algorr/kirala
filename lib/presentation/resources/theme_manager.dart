@@ -61,7 +61,7 @@ ThemeData getAppTheme() {
       ),
     ),
 
-//* TextTheme
+//* Text Theme
     textTheme: TextTheme(
       displayLarge: getBoldTextStyle(
         color: ColorManager.black,
