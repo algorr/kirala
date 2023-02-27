@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kirala/core/widgets/first_view_widgets/custom_text_widget.dart';
 
-class ExpressYourselfView extends StatelessWidget {
-  const ExpressYourselfView({super.key});
+class IntroduceYourselfView extends StatelessWidget {
+  const IntroduceYourselfView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kirala/presentation/resources/string_manager.dart';
-import 'package:kirala/presentation/view/express_yourself/express_yourself_view.dart';
+import 'package:kirala/presentation/view/introduce_yourself/introduce_yourself_view.dart';
 import 'package:kirala/presentation/view/main/main_view.dart';
 import 'package:kirala/presentation/view/splash_view/splash_view.dart';
 
@@ -17,7 +17,7 @@ class RouteManager {
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashView());
       case Routes.onBoardingRoute:
-        return MaterialPageRoute(builder: (_) => const ExpressYourselfView());
+        return MaterialPageRoute(builder: (_) => const IntroduceYourselfView());
       case Routes.mainRoute:
         return MaterialPageRoute(builder: (_) => const MainView());
 

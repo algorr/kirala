@@ -5,12 +5,20 @@ class AppStrings {
   static const String bottomSheetHeadTitle = 'Kendini İfade Et!';
   static const String profilePhotoTitle = 'Profil Fotoğrafı';
   static const String addPhotoTitle = 'Ekle';
+  static const String changePhotoTitle = 'Profil Fotoğrafımı Değiştir';
   static const String saveButtonTitle = 'Kaydet';
-  static const String expressYourselfButtonTitle = 'Kendini İfade Et';
+  static const String introduceYourselfButtonTitle = 'Kendini İfade Et';
   static const String genderSelectionTitle = 'Cinsiyetiniz';
   static const String petCountTitle = 'Pet Dost Sayısı';
   static const String petSelectionTitle = 'Pet Dostunuz Var mı?';
   static const String educationSelectionTitle = 'Eğitim Durumunuz:';
+  static const String educationSelectionPageTitle = 'Eğitim Durumunuz';
+  static const String doctorateTitle = 'Doktora';
+  static const String primarySchoolTitle = 'İlkokul';
+  static const String highSchoolTitle = 'Lise';
+  static const String universityTitle = 'Üniversite';
+  static const String educationSelectionPageSubTitle =
+      'Eğitim durumunuzu seçiniz..';
   static const String dropDownSelectionTitle = 'Lütfen Seçiniz';
   static const String netSalaryTitle = 'Aylık Net Maaş';
   static const String incomeStatusTitle = 'Ek Geliriniz Var mı?';
@@ -18,6 +26,8 @@ class AppStrings {
   static const String incomeTypeTitle = 'Gelir Tipi:';
   static const String incomeYesTitle = 'Evet';
   static const String incomeNoTitle = 'Hayır';
+  static const String petNoTitle = 'Hayır';
+  static const String petYesTitle = 'Evet';
   static const String lowestPrice = 'En Düşük';
   static const String highestPrice = 'En Yüksek';
   static const String tellAboutYourselfTitle =

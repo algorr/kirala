@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kirala/presentation/resources/route_manager.dart';
 import 'package:kirala/presentation/resources/theme_manager.dart';
+import 'package:kirala/viewmodel/cubit/introduce_cubit.dart';
 import 'package:sizer/sizer.dart';
 
 class MyApp extends StatefulWidget {
@@ -20,15 +22,18 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return Sizer(
-      builder: (context, orientation, deviceType) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: getAppTheme(),
-          onGenerateRoute: RouteManager.getRoute,
-          initialRoute: Routes.splashRoute,
-        );
-      },
+    return BlocProvider(
+      create: (context) => IntroduceCubit(),
+      child: Sizer(
+        builder: (context, orientation, deviceType) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: getAppTheme(),
+            onGenerateRoute: RouteManager.getRoute,
+            initialRoute: Routes.splashRoute,
+          );
+        },
+      ),
     );
   }
 }

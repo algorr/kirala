@@ -42,7 +42,12 @@ dependencies:
 
   # image_picking
   image_picker: ^0.8.6+3
+
+  # reponsive_design
   sizer: ^2.0.15
+
+  # checking equality
+  equatable: ^2.0.5
   
 
 dev_dependencies:
