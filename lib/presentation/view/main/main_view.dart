@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kirala/core/widgets/education_view_widgets/education_row.dart';
+import 'package:kirala/core/widgets/education_view_widgets/education_title.dart';
+import 'package:kirala/core/widgets/first_view_widgets/custom_text_field.dart';
 import 'package:kirala/core/widgets/first_view_widgets/save_button.dart';
 import 'package:kirala/presentation/resources/color_manager.dart';
 import 'package:kirala/presentation/resources/image_manager.dart';
@@ -465,25 +466,85 @@ class _MainViewState extends State<MainView> {
                                                             EducationTitle(
                                                               title: AppStrings
                                                                   .doctorateTitle,
-                                                              onPressed: () {},
+                                                              onPressed: () {
+                                                                context
+                                                                    .read<
+                                                                        IntroduceCubit>()
+                                                                    .educationSelection();
+
+                                                                context
+                                                                        .read<
+                                                                            IntroduceCubit>()
+                                                                        .educationTitle =
+                                                                    AppStrings
+                                                                        .doctorateTitle;
+
+                                                                Navigator.pop(
+                                                                    context);
+                                                              },
                                                             ),
                                                             const DividerWidget(),
                                                             EducationTitle(
                                                               title: AppStrings
                                                                   .primarySchoolTitle,
-                                                              onPressed: () {},
+                                                              onPressed: () {
+                                                                context
+                                                                    .read<
+                                                                        IntroduceCubit>()
+                                                                    .educationSelection();
+
+                                                                context
+                                                                        .read<
+                                                                            IntroduceCubit>()
+                                                                        .educationTitle =
+                                                                    AppStrings
+                                                                        .primarySchoolTitle;
+
+                                                                Navigator.pop(
+                                                                    context);
+                                                              },
                                                             ),
                                                             const DividerWidget(),
                                                             EducationTitle(
                                                               title: AppStrings
                                                                   .highSchoolTitle,
-                                                              onPressed: () {},
+                                                              onPressed: () {
+                                                                context
+                                                                    .read<
+                                                                        IntroduceCubit>()
+                                                                    .educationSelection();
+
+                                                                context
+                                                                        .read<
+                                                                            IntroduceCubit>()
+                                                                        .educationTitle =
+                                                                    AppStrings
+                                                                        .highSchoolTitle;
+
+                                                                Navigator.pop(
+                                                                    context);
+                                                              },
                                                             ),
                                                             const DividerWidget(),
                                                             EducationTitle(
                                                               title: AppStrings
                                                                   .universityTitle,
-                                                              onPressed: () {},
+                                                              onPressed: () {
+                                                                context
+                                                                    .read<
+                                                                        IntroduceCubit>()
+                                                                    .educationSelection();
+
+                                                                context
+                                                                        .read<
+                                                                            IntroduceCubit>()
+                                                                        .educationTitle =
+                                                                    AppStrings
+                                                                        .universityTitle;
+
+                                                                Navigator.pop(
+                                                                    context);
+                                                              },
                                                             ),
                                                           ],
                                                         ),
@@ -493,8 +554,16 @@ class _MainViewState extends State<MainView> {
                                         },
                                         child: DropdownButtonFormField(
                                             hint: CustomTextWidget(
-                                              data: AppStrings
-                                                  .dropDownSelectionTitle,
+                                              data: context
+                                                          .read<
+                                                              IntroduceCubit>()
+                                                          .educationTitle ==
+                                                      null
+                                                  ? AppStrings
+                                                      .dropDownSelectionTitle
+                                                  : context
+                                                      .read<IntroduceCubit>()
+                                                      .educationTitle!,
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .bodySmall,
@@ -571,7 +640,11 @@ class _MainViewState extends State<MainView> {
                                                       .width *
                                                   .4,
                                               child: CustomElevatedButton(
-                                                onPressed: () {},
+                                                onPressed: () {
+                                                  context
+                                                      .read<IntroduceCubit>()
+                                                      .positiveIncomeSelection();
+                                                },
                                                 data: AppStrings.incomeYesTitle,
                                                 style: Theme.of(context)
                                                     .textTheme
@@ -590,7 +663,11 @@ class _MainViewState extends State<MainView> {
                                                       .width *
                                                   .4,
                                               child: CustomElevatedButton(
-                                                onPressed: () {},
+                                                onPressed: () {
+                                                  context
+                                                      .read<IntroduceCubit>()
+                                                      .negativeIncomeSelection();
+                                                },
                                                 data: AppStrings.incomeNoTitle,
                                                 style: Theme.of(context)
                                                     .textTheme
@@ -608,66 +685,78 @@ class _MainViewState extends State<MainView> {
                               SizedBox(height: 2.h),
 
                               //* Income Type Column
-                              Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.topLeft,
-                                    child: Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: AppPadding.p10,
-                                          horizontal: AppPadding.p20),
-                                      child: CustomTextWidget(
-                                        data: AppStrings.incomeTypeTitle,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .bodyLarge,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          .9,
-                                      child: DropdownButtonFormField(
-                                          hint: CustomTextWidget(
-                                            data: AppStrings
-                                                .dropDownSelectionTitle,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .bodySmall,
+                              context.read<IntroduceCubit>().incomeSelected ==
+                                      true
+                                  ? Column(
+                                      children: [
+                                        Align(
+                                          alignment: Alignment.topLeft,
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                vertical: AppPadding.p10,
+                                                horizontal: AppPadding.p20),
+                                            child: CustomTextWidget(
+                                              data: AppStrings.incomeTypeTitle,
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .bodyLarge,
+                                            ),
                                           ),
-                                          decoration: const InputDecoration(
-                                              border: OutlineInputBorder()),
-                                          items: const [],
-                                          onChanged: (index) {}))
-                                ],
-                              ),
+                                        ),
+                                        SizedBox(
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                .9,
+                                            child: DropdownButtonFormField(
+                                                hint: CustomTextWidget(
+                                                  data: AppStrings
+                                                      .dropDownSelectionTitle,
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .bodySmall,
+                                                ),
+                                                decoration: const InputDecoration(
+                                                    border:
+                                                        OutlineInputBorder()),
+                                                items: const [],
+                                                onChanged: (index) {}))
+                                      ],
+                                    )
+                                  : const SizedBox.shrink(),
 
                               SizedBox(height: 1.h),
 
                               //* Income Type Row
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: AppPadding.p10,
-                                    horizontal: AppPadding.p20),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          right: AppPadding.p10),
-                                      child: Image.asset(ImageManager.plus),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(bottom: 5.sp),
-                                      child: CustomTextWidget(
-                                        data: AppStrings.addIncomeTitle,
-                                        style: TextStyle(
-                                            color: ColorManager.primary),
+                              context.read<IntroduceCubit>().incomeSelected ==
+                                      true
+                                  ? Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: AppPadding.p10,
+                                          horizontal: AppPadding.p20),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: AppPadding.p10),
+                                            child:
+                                                Image.asset(ImageManager.plus),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsets.only(bottom: 5.sp),
+                                            child: CustomTextWidget(
+                                              data: AppStrings.addIncomeTitle,
+                                              style: TextStyle(
+                                                  color: ColorManager.primary),
+                                            ),
+                                          )
+                                        ],
                                       ),
                                     )
-                                  ],
-                                ),
-                              ),
+                                  : const SizedBox.shrink(),
 
                               SizedBox(height: 2.h),
 
@@ -727,8 +816,18 @@ class _MainViewState extends State<MainView> {
                                       inactiveColor: ColorManager.grey,
                                       min: 0,
                                       max: 100000,
-                                      values: const RangeValues(1500, 4500),
-                                      onChanged: (RangeValues newRange) {},
+                                      values:
+                                          context.read<IntroduceCubit>().values,
+                                      onChanged: (newValue) {
+                                        print(
+                                            'first value : ${newValue.start} and second value : ${newValue.end}');
+                                        context.read<IntroduceCubit>().values =
+                                            newValue;
+
+                                        context
+                                            .read<IntroduceCubit>()
+                                            .priceSelection();
+                                      },
                                     ),
                                   ),
                                   SizedBox(
@@ -755,12 +854,21 @@ class _MainViewState extends State<MainView> {
                                                         .size
                                                         .width *
                                                     .3,
-                                                child: const TextField(
+                                                child: TextField(
                                                   keyboardType:
                                                       TextInputType.number,
                                                   textAlign: TextAlign.end,
                                                   decoration: InputDecoration(
-                                                      hintText: '  1500'),
+                                                      hintText: context
+                                                                  .read<
+                                                                      IntroduceCubit>()
+                                                                  .firstPrice ==
+                                                              null
+                                                          ? '1500'
+                                                          : context
+                                                              .read<
+                                                                  IntroduceCubit>()
+                                                              .firstPrice),
                                                 ),
                                               ),
                                             ],
@@ -782,12 +890,21 @@ class _MainViewState extends State<MainView> {
                                                         .size
                                                         .width *
                                                     .3,
-                                                child: const TextField(
+                                                child: TextField(
                                                   keyboardType:
                                                       TextInputType.number,
                                                   textAlign: TextAlign.end,
                                                   decoration: InputDecoration(
-                                                      hintText: '  4500'),
+                                                      hintText: context
+                                                                  .read<
+                                                                      IntroduceCubit>()
+                                                                  .secondPrice ==
+                                                              null
+                                                          ? '4500'
+                                                          : context
+                                                              .read<
+                                                                  IntroduceCubit>()
+                                                              .secondPrice),
                                                 ),
                                               ),
                                             ],
@@ -823,14 +940,10 @@ class _MainViewState extends State<MainView> {
                                       width: MediaQuery.of(context).size.width *
                                           .9,
                                       height: AppSize.s150,
-                                      child: const TextField(
-                                        keyboardType: TextInputType.multiline,
-                                        maxLines: null,
-                                        maxLength: 300,
-                                        expands: true,
-                                        decoration: InputDecoration(
-                                            hintText: '  4500',
-                                            border: InputBorder.none),
+                                      child: const IntrinsicWidth(
+                                        child: CustomTextField(
+                                            text: AppStrings
+                                                .tellAboutYourselfText),
                                       ))
                                 ],
                               ),
@@ -847,7 +960,9 @@ class _MainViewState extends State<MainView> {
                                     width:
                                         MediaQuery.of(context).size.width * .3,
                                     child: SaveButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
                                       data: AppStrings.saveButtonTitle,
                                       style: TextStyle(
                                         color: ColorManager.white,

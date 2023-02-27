@@ -22,7 +22,7 @@ class HeadLineRow extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: AppPadding.p25.sp,
+          width: AppPadding.p60.sp,
         ),
         Text(
           AppStrings.bottomSheetHeadTitle,

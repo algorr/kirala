@@ -17,6 +17,12 @@ class PetChoicePositiveState extends IntroduceState {}
 
 class PetChoiceNegativeState extends IntroduceState {}
 
+class EducationTitleState extends IntroduceState {}
+
 class IncomeState extends IntroduceState {}
 
-class PriceState extends IntroduceState {}
+class NoIncomeState extends IntroduceState {}
+
+class FirstPriceState extends IntroduceState {}
+
+class SecondPriceState extends IntroduceState {}

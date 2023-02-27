@@ -41,6 +41,8 @@ class AppStrings {
   static const String petCount2 = '2';
   static const String petCount3 = '3+';
   static const String otherGenderTitle = 'Diğer';
+  static const String tellAboutYourselfText =
+      "Merhaba, ben ailem ile beraber İstanbul'dan iş için İzmir/Karşıyaka'ya taşınıyorum. Evinizin konumu ofisime çok yakın.";
   static const String advertTitle =
       'Aydınlık ve belirgin bir profil fotoğrafı, başvurunuzu öne çıkarmak için oldukça önemlidir. :)';
 }
