@@ -438,8 +438,17 @@ class _MainViewState extends State<MainView> {
                                                           ],
                                                         ),
                                                         CustomTextWidget(
-                                                          data: AppStrings
-                                                              .educationSelectionPageTitle,
+                                                          data: context
+                                                                      .read<
+                                                                          IntroduceCubit>()
+                                                                      .educationTitle ==
+                                                                  null
+                                                              ? AppStrings
+                                                                  .educationSelectionPageTitle
+                                                              : context
+                                                                  .read<
+                                                                      IntroduceCubit>()
+                                                                  .educationTitle!,
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme

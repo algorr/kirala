@@ -17,7 +17,13 @@ class PetChoicePositiveState extends IntroduceState {}
 
 class PetChoiceNegativeState extends IntroduceState {}
 
-class EducationTitleState extends IntroduceState {}
+class DoctorateEducationTitleState extends IntroduceState {}
+
+class PrimaryEducationTitleState extends IntroduceState {}
+
+class HighEducationTitleState extends IntroduceState {}
+
+class UniversityEducationTitleState extends IntroduceState {}
 
 class IncomeState extends IntroduceState {}
 

@@ -50,7 +50,13 @@ class IntroduceCubit extends Cubit<IntroduceState> {
   //* Education Selection
   void educationSelection() {
     educationTitle;
-    emit(EducationTitleState());
+    emit(DoctorateEducationTitleState());
+    educationTitle;
+    emit(PrimaryEducationTitleState());
+    educationTitle;
+    emit(HighEducationTitleState());
+    educationTitle;
+    emit(UniversityEducationTitleState());
   }
 
   //* Positive Income Selection
