@@ -22,9 +22,6 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
-  // final ImagePicker _picker = ImagePicker();
-  //File? imagePath;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,27 +87,30 @@ class _MainViewState extends State<MainView> {
                                   ),
 
                                   //* Delete button
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                        left: AppPadding.p84.sp,
-                                        top: AppPadding.p2.h),
-                                    child: Container(
-                                      width: 22.sp,
-                                      height: 22.sp,
-                                      decoration: BoxDecoration(
-                                          color: ColorManager.grey,
-                                          borderRadius:
-                                              BorderRadius.circular(5)),
-                                      child: IconButton(
-                                          onPressed: () {
-                                            context
-                                                .read<IntroduceCubit>()
-                                                .deleteProfilePicture();
-                                          },
-                                          icon:
-                                              Image.asset(ImageManager.delete)),
-                                    ),
-                                  ),
+                                  context.read<IntroduceCubit>().imagePath !=
+                                          null
+                                      ? Padding(
+                                          padding: EdgeInsets.only(
+                                              left: AppPadding.p84.sp,
+                                              top: AppPadding.p2.h),
+                                          child: Container(
+                                            width: 22.sp,
+                                            height: 22.sp,
+                                            decoration: BoxDecoration(
+                                                color: ColorManager.grey,
+                                                borderRadius:
+                                                    BorderRadius.circular(5)),
+                                            child: IconButton(
+                                                onPressed: () {
+                                                  context
+                                                      .read<IntroduceCubit>()
+                                                      .deleteProfilePicture();
+                                                },
+                                                icon: Image.asset(
+                                                    ImageManager.delete)),
+                                          ),
+                                        )
+                                      : const SizedBox.shrink(),
                                   Padding(
                                     padding: EdgeInsets.only(
                                         left: AppPadding.p32.sp,
@@ -819,8 +819,6 @@ class _MainViewState extends State<MainView> {
                                       values:
                                           context.read<IntroduceCubit>().values,
                                       onChanged: (newValue) {
-                                        print(
-                                            'first value : ${newValue.start} and second value : ${newValue.end}');
                                         context.read<IntroduceCubit>().values =
                                             newValue;
 
@@ -860,15 +858,10 @@ class _MainViewState extends State<MainView> {
                                                   textAlign: TextAlign.end,
                                                   decoration: InputDecoration(
                                                       hintText: context
-                                                                  .read<
-                                                                      IntroduceCubit>()
-                                                                  .firstPrice ==
-                                                              null
-                                                          ? '1500'
-                                                          : context
                                                               .read<
                                                                   IntroduceCubit>()
-                                                              .firstPrice),
+                                                              .firstPrice ??
+                                                          '1500'),
                                                 ),
                                               ),
                                             ],
@@ -896,15 +889,10 @@ class _MainViewState extends State<MainView> {
                                                   textAlign: TextAlign.end,
                                                   decoration: InputDecoration(
                                                       hintText: context
-                                                                  .read<
-                                                                      IntroduceCubit>()
-                                                                  .secondPrice ==
-                                                              null
-                                                          ? '4500'
-                                                          : context
                                                               .read<
                                                                   IntroduceCubit>()
-                                                              .secondPrice),
+                                                              .secondPrice ??
+                                                          '4500'),
                                                 ),
                                               ),
                                             ],
