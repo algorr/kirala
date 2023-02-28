@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:kirala/presentation/resources/image_manager.dart';
 import 'package:kirala/presentation/resources/route_manager.dart';
+import 'package:sizer/sizer.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -14,7 +16,7 @@ class _SplashViewState extends State<SplashView> {
   Timer? _timer;
 
   _startTimer() {
-    _timer = Timer(const Duration(seconds: 3), _goNext);
+    _timer = Timer(const Duration(seconds: 1), _goNext);
   }
 
   _goNext() {
@@ -35,9 +37,13 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('Splash View'),
+        child: SizedBox(
+          width: 70.sp,
+          height: 70.sp,
+          child: Image.asset(ImageManager.logo),
+        ),
       ),
     );
   }
